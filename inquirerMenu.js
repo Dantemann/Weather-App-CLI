@@ -16,8 +16,8 @@ const questions = [
                 name: `${"2".green}. History`
             },
             {
-                value: 3,
-                name: `${"3".red}. Leave`
+                value: 0,
+                name: `${"0".red}. Leave`
             }
         ]
     }

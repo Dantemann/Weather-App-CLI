@@ -18,10 +18,10 @@ const main = async() => {
 
                 if( selectedId === '0') continue;
 
-                const selectedPlace = places.find( place => place.id === selectedId );
-                // searches.addToHistory( selectedId.name );
+                const selectedPlace = await places.find( place => place.id === selectedId );
+                searches.addToHistory( selectedPlace.name );
                 
-                const weather = await searches.cityWeather( selectedId.lat, selectedId.lng );
+                const weather = await searches.cityWeather( selectedPlace.lat, selectedPlace.lng );
                 
                 console.log("\nCity information\n".green);
                 console.log("City:", selectedPlace.name);
@@ -30,7 +30,7 @@ const main = async() => {
                 console.log("Temperature:", weather.temp);
                 console.log("Min:", weather.min);
                 console.log("Max:", weather.max);
-                console.log("How is the weatehr:", weather.desc);
+                console.log("How is the weather:", weather.desc);
                 
                 break;
         

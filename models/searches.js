@@ -9,7 +9,7 @@ class Searches {
         return {
             "access_token": process.env.MAPBOX_KEY,
             "limit": 5,
-            "language": "es",
+            "language": "en",
             "types": "place",
             "proximity": "ip"
         };
@@ -19,7 +19,7 @@ class Searches {
         return {
             "appid": process.env.OPENWEATHER_KEY,
             "units": "metric",
-            "lang": "es"
+            "lang": "en"
         };
     };
 
@@ -42,7 +42,7 @@ class Searches {
         try {
             const instance = axios.create({
                 baseURL: `https://api.openweathermap.org/data/2.5/weather`,
-                params: { ...this.paramsWeather, lat, lng}
+                params: { ...this.paramsWeather, lat, lon:lng}
             });
 
             const resp = await instance.get();
